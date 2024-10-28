@@ -1,0 +1,54 @@
+services:
+
+  portfolio:
+      container_name: portfolio
+      build: .
+      expose:
+        - "8000"
+      volumes:
+        - ./:/usr/src/app
+  
+  nginx:
+      build: ./nginx
+      ports:
+        - "80:80"
+      links:
+        - portfolio
+        - nginx-proxy
+        - nginx-letsencrypt
+      environment:
+        - VIRTUAL_HOST=portfolio.jayghz.me,www.jayghz.me
+        - LETSENCRYPT_HOST=portfolio.jayghz.me,www.jayghz.me
+      restart: always
+
+  nginx-proxy:
+      image: jwilder/nginx-proxy
+      container_name: nginx-proxy
+      ports:
+        - "80:80"
+        - "443:443"
+      volumes:
+        - /var/run/docker.sock:/tmp/docker.sock:ro
+        - certs:/etc/nginx/certs:ro
+        - vhost:/etc/nginx/vhost.d
+        - html:/usr/share/nginx/html
+      labels:
+        - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
+      restart: always
+
+  nginx-letsencrypt:
+      image: jrcs/letsencrypt-nginx-proxy-companion
+      restart: always
+      container_name: nginx-letsencrypt
+      environment:
+        - NGINX_PROXY_CONTAINER=nginx-proxy
+      volumes:
+        - certs:/etc/nginx/certs:rw
+        - /var/run/docker.sock:/var/run/docker.sock:ro
+        - vhots:/etc/nginx/vhost.d
+        - html:/usr/share/nginx/html
+
+volumes:
+  certs:
+  vhost:
+  html:
