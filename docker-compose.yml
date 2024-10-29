@@ -5,6 +5,8 @@ services:
       build: .
       expose:
         - "5000"
+      environment:
+        - NODE_OPTIONS=--max-old-space-size=1024
       volumes:
         - ./:/usr/src/app
   
