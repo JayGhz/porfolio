@@ -4,7 +4,7 @@ services:
       container_name: portfolio
       build: .
       expose:
-        - "8000"
+        - "5000"
       volumes:
         - ./:/usr/src/app
   
@@ -30,7 +30,7 @@ services:
       volumes:
         - /var/run/docker.sock:/tmp/docker.sock:ro
         - certs:/etc/nginx/certs:ro
-        - vhost:/etc/nginx/vhost.d
+        - vhostd:/etc/nginx/vhost.d
         - html:/usr/share/nginx/html
       labels:
         - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
@@ -45,10 +45,10 @@ services:
       volumes:
         - certs:/etc/nginx/certs:rw
         - /var/run/docker.sock:/var/run/docker.sock:ro
-        - vhots:/etc/nginx/vhost.d
+        - vhostd:/etc/nginx/vhost.d
         - html:/usr/share/nginx/html
 
 volumes:
   certs:
-  vhost:
+  vhostd:
   html:
