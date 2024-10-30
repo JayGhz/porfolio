@@ -1,11 +1,46 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+
+import Hero from "../components/Hero.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import TittleSection from "@/components/TittleSection.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Projects from "@/components/Projects.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import AboutMe from "@/components/AboutMe.astro";
+import StackTechs from "@/components/StackTechs.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Portfolio</h1>
+<Layout title="Porfolio de JayGhz" description="Conoce el portfolio de JayGhz">
+	<main class="px-4">
+		<SectionContainer class="py-16 md:py-36">
+			<Hero />
+		</SectionContainer>
+		<div class="space-y-24">
+
+			<SectionContainer id="stack">
+				<TittleSection>
+					<CodeIcon class="size-8" />
+					Stack Tecnológico
+				</TittleSection>
+				<StackTechs />
+			</SectionContainer>
+
+			<SectionContainer id="proyectos">
+				<TittleSection>
+					<CodeIcon class="size-7" />
+					Proyectos
+				</TittleSection>
+				<Projects />
+			</SectionContainer>
+
+			<SectionContainer id="sobre-mi">
+				<TittleSection>
+					<ProfileCheck class="size-8" />
+					Sobre mí
+				</TittleSection>
+				<AboutMe />
+			</SectionContainer>
+		</div>
 	</main>
 </Layout>
-

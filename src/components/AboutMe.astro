@@ -1,0 +1,39 @@
+---
+const personalImageAlt = "Jhair Armando";
+---
+
+<article
+    class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
+>
+    <div
+        class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+    >
+        <p>
+            Me llamo Jhair Armando, soy estudiante de Ciencias de la Computación
+            con una sólida base en <strong
+                >desarrollo de software y servicios en la nube.</strong
+            >
+            A lo largo de estos tres años de estudio, he adquirido experiencia en
+            proyectos académicos que han fortalecido mi conocimiento técnico y mis
+            habilidades para trabajar en equipo.
+        </p>
+
+        <p>
+            Mi interés se centra en la <strong
+                >creación de aplicaciones eficientes y escalables, así como en
+                la implementación y automatización de procesos en la nube.
+            </strong>
+            Mi objetivo es aplicar mis conocimientos en proyectos del mundo real,
+            contribuyendo de manera significativa al crecimiento de una empresa y
+            aportando valor a la comunidad open source.
+        </p>
+    </div>
+    <img
+        width="200"
+        height="200"
+        src="/logo.webp"
+        alt={personalImageAlt}
+        class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
+        style="object-position: 50% 50%"
+    />
+</article>
