@@ -1,0 +1,63 @@
+---
+const techs = [
+    // Programming Languages
+    { class: "devicon-javascript-plain", name: "JavaScript" },
+    { class: "devicon-cplusplus-plain", name: "C++" },
+    { class: "devicon-java-plain", name: "Java" },
+    { class: "devicon-python-plain", name: "Python" },
+    { class: "devicon-r-plain", name: "R" },
+    { class: "devicon-typescript-plain", name: "TypeScript" },
+
+    // Frontend Frameworks and Libraries
+    { class: "devicon-react-original", name: "React" },
+    { class: "devicon-angularjs-plain", name: "Angular" },
+    { class: "devicon-nextjs-plain", name: "NextJS" },
+
+    // Backend Frameworks and Libraries
+    { class: "devicon-nodejs-plain", name: "Node.js" },
+    { class: "devicon-spring-plain", name: "Spring" },
+
+    // Databases
+    { class: "devicon-mongodb-plain", name: "MongoDB" },
+    { class: "devicon-postgresql-plain", name: "PostgreSQL" },
+    { class: "devicon-mysql-plain", name: "MySQL" },
+
+    // DevOps and Cloud
+    { class: "devicon-docker-plain", name: "Docker" },
+    { class: "devicon-amazonwebservices-plain", name: "AWS" },
+    { class: "devicon-digitalocean-plain", name: "DigitalOcean" },
+    { class: "devicon-googlecloud-plain", name: "Google Cloud" },
+
+    // Others
+    { class: "devicon-tailwindcss-original", name: "TailwindCSS" },
+    { class: "devicon-html5-plain", name: "HTML" },
+    { class: "devicon-css3-plain", name: "CSS" },
+    { class: "devicon-git-plain", name: "Git" }
+];
+---
+
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+/>
+
+<div class="flex flex-wrap gap-4 mt-8">
+    {techs.map((tech) => (
+        <div
+            class="flex bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 items-center justify-center gap-2 p-4 text-base transition border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md group rounded-xl focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 k"
+        >
+            <i class={`tech-icon ${tech.class}`} style="font-size: 2rem;"></i>
+        </div>
+    ))}
+</div>
+<style>
+    .tech-icon {
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tech-icon:hover {
+        transform: translateY(-10px);
+    }
+</style>

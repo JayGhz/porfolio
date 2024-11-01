@@ -9,18 +9,19 @@ import Projects from "@/components/Projects.astro";
 import ProfileCheck from "@/components/icons/ProfileCheck.astro";
 import AboutMe from "@/components/AboutMe.astro";
 import StackTechs from "@/components/StackTechs.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
 ---
 
 <Layout title="Porfolio de JayGhz" description="Conoce el portfolio de JayGhz">
 	<main class="px-4">
-		<SectionContainer class="py-16 md:py-36">
+		<SectionContainer class="py-14 md:mt-24 md:mb-6">
 			<Hero />
 		</SectionContainer>
 		<div class="space-y-24">
 
 			<SectionContainer id="stack">
 				<TittleSection>
-					<CodeIcon class="size-8" />
+					<Briefcase class="size-8" />
 					Stack Tecnológico
 				</TittleSection>
 				<StackTechs />
