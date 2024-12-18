@@ -12,7 +12,7 @@ const techs = [
     { class: "devicon-tailwindcss-plain", name: "TailwindCSS", hoverColor: "#06b6d4" },
     { class: "devicon-react-plain", name: "React", hoverColor: "#61dafb" },
     { class: "devicon-angularjs-plain", name: "Angular", hoverColor: "#dd0031" },
-    { class: "devicon-nextjs-plain", name: "NextJS", hoverColor: "#a0a0a0" }, 
+    { class: "devicon-nextjs-plain", name: "NextJS", hoverColor: "#5a5a5a" }, 
     { class: "devicon-nodejs-plain", name: "Node.js", hoverColor: "#68a063" },
     { class: "devicon-nestjs-plain", name: "NestJS", hoverColor: "#e0234e" },
     { class: "devicon-spring-plain", name: "Spring", hoverColor: "#6db33f" },
@@ -41,7 +41,7 @@ const techs = [
 <div class="flex flex-wrap gap-4 mt-8">
     {techs.map((tech) => (
         <div
-            class="flex bg-[#f3f4f6] dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 items-center justify-center gap-2 p-4 text-base transition border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md group rounded-xl focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 k"
+            class="flex  text-gray-800 dark:text-white border-gray-300 items-center justify-center gap-2 p-4 text-base transition border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md group rounded-xl focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 k"
         >
             <i class={`tech-icon ${tech.class}`} style={`font-size: 2rem; --hover-color: ${tech.hoverColor};`}></i>
         </div>
@@ -52,18 +52,19 @@ const techs = [
       font-size: 3rem;
       transition: transform 0.5s ease, color 0.3s ease, filter 0.3s ease;
     }
-
-    /* div:hover .tech-icon {
-        transform: rotateZ(360deg) scale(1.2);
-        color: #0c82e7; 
-        filter: drop-shadow(0 0 10px #8aa0ff); 
-    } */
-    
-    /* Replace with var(--hover-color)*/
     div:hover .tech-icon {
         transform: rotateZ(360deg) scale(1.2);
-        color: var(--hover-color); 
-        filter: drop-shadow(0 0 10px var(--hover-color)); 
+        color: var(--hover-color);
     }
-    
+
+    /* Modo claro: sombra de 30px */
+    html:not(.dark) div:hover .tech-icon {
+        filter: drop-shadow(0 0 px var(--hover-color)); /* Sombra de 30px en modo claro */
+    }
+
+    /* Modo oscuro: sombra de 10px */
+    html.dark div:hover .tech-icon {
+        filter: drop-shadow(0 0 10px var(--hover-color)); /* Sombra de 10px en modo oscuro */
+    }
+
 </style>
