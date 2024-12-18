@@ -1,38 +1,34 @@
 ---
 const techs = [
     // Programming Languages
-    { class: "devicon-javascript-plain", name: "JavaScript" },
-    { class: "devicon-cplusplus-plain", name: "C++" },
-    { class: "devicon-java-plain", name: "Java" },
-    { class: "devicon-python-plain", name: "Python" },
-    { class: "devicon-r-plain", name: "R" },
-    { class: "devicon-typescript-plain", name: "TypeScript" },
+    { class: "devicon-javascript-plain", name: "JavaScript", hoverColor: "#f7df1e" },
+    { class: "devicon-typescript-plain", name: "TypeScript", hoverColor: "#007acc" },
+    { class: "devicon-cplusplus-plain", name: "C++", hoverColor: "#00599C" }, 
+    { class: "devicon-python-plain", name: "Python", hoverColor: "#3776AB" }, 
+    { class: "devicon-html5-plain", name: "HTML", hoverColor: "#e34f26" },
+    { class: "devicon-css3-plain", name: "CSS", hoverColor: "#1572b6" },
 
-    // Frontend Frameworks and Libraries
-    { class: "devicon-react-original", name: "React" },
-    { class: "devicon-angularjs-plain", name: "Angular" },
-    { class: "devicon-nextjs-plain", name: "NextJS" },
-
-    // Backend Frameworks and Libraries
-    { class: "devicon-nodejs-plain", name: "Node.js" },
-    { class: "devicon-spring-plain", name: "Spring" },
+    //Frameworks
+    { class: "devicon-tailwindcss-plain", name: "TailwindCSS", hoverColor: "#06b6d4" },
+    { class: "devicon-react-plain", name: "React", hoverColor: "#61dafb" },
+    { class: "devicon-angularjs-plain", name: "Angular", hoverColor: "#dd0031" },
+    { class: "devicon-nextjs-plain", name: "NextJS", hoverColor: "#a0a0a0" }, 
+    { class: "devicon-nodejs-plain", name: "Node.js", hoverColor: "#68a063" },
+    { class: "devicon-nestjs-plain", name: "NestJS", hoverColor: "#e0234e" },
+    { class: "devicon-spring-plain", name: "Spring", hoverColor: "#6db33f" },
 
     // Databases
-    { class: "devicon-mongodb-plain", name: "MongoDB" },
-    { class: "devicon-postgresql-plain", name: "PostgreSQL" },
-    { class: "devicon-mysql-plain", name: "MySQL" },
+    { class: "devicon-mongodb-plain", name: "MongoDB", hoverColor: "#47a248" },
+    { class: "devicon-postgresql-plain", name: "PostgreSQL", hoverColor: "#336791" },
 
-    // DevOps and Cloud
-    { class: "devicon-docker-plain", name: "Docker" },
-    { class: "devicon-amazonwebservices-plain", name: "AWS" },
-    { class: "devicon-digitalocean-plain", name: "DigitalOcean" },
-    { class: "devicon-googlecloud-plain", name: "Google Cloud" },
-
-    // Others
-    { class: "devicon-tailwindcss-original", name: "TailwindCSS" },
-    { class: "devicon-html5-plain", name: "HTML" },
-    { class: "devicon-css3-plain", name: "CSS" },
-    { class: "devicon-git-plain", name: "Git" }
+    // Cloud Providers and Tools
+    { class: "devicon-amazonwebservices-plain", name: "AWS", hoverColor: "#ff9900" },
+    { class: "devicon-digitalocean-plain", name: "DigitalOcean", hoverColor: "#0080ff" },
+    { class: "devicon-googlecloud-plain", name: "Google Cloud", hoverColor: "#4285f4" },
+    { class: "devicon-firebase-plain", name: "Firebase", hoverColor: "#ffca28" },
+    { class: "devicon-docker-plain", name: "Docker", hoverColor: "#2496ed" },
+    { class: "devicon-git-plain", name: "Git", hoverColor: "#f34f29" },
+    { class: "devicon-vscode-plain", name: "VS Code", hoverColor: "#007acc" },
 ];
 ---
 
@@ -47,17 +43,27 @@ const techs = [
         <div
             class="flex bg-[#f3f4f6] dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 items-center justify-center gap-2 p-4 text-base transition border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md group rounded-xl focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 k"
         >
-            <i class={`tech-icon ${tech.class}`} style="font-size: 2rem;"></i>
+            <i class={`tech-icon ${tech.class}`} style={`font-size: 2rem; --hover-color: ${tech.hoverColor};`}></i>
         </div>
     ))}
 </div>
 <style>
     .tech-icon {
-        position: relative;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-size: 3rem;
+      transition: transform 0.5s ease, color 0.3s ease, filter 0.3s ease;
     }
 
-    .tech-icon:hover {
-        transform: translateY(-10px);
+    /* div:hover .tech-icon {
+        transform: rotateZ(360deg) scale(1.2);
+        color: #0c82e7; 
+        filter: drop-shadow(0 0 10px #8aa0ff); 
+    } */
+    
+    /* Replace with var(--hover-color)*/
+    div:hover .tech-icon {
+        transform: rotateZ(360deg) scale(1.2);
+        color: var(--hover-color); 
+        filter: drop-shadow(0 0 10px var(--hover-color)); 
     }
+    
 </style>
