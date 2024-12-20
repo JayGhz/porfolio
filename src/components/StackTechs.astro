@@ -57,14 +57,12 @@ const techs = [
         color: var(--hover-color);
     }
 
-    /* Modo claro: sombra de 30px */
     html:not(.dark) div:hover .tech-icon {
-        filter: drop-shadow(0 0 px var(--hover-color)); /* Sombra de 30px en modo claro */
+        filter: drop-shadow(0 0 0px var(--hover-color));
     }
 
-    /* Modo oscuro: sombra de 10px */
     html.dark div:hover .tech-icon {
-        filter: drop-shadow(0 0 10px var(--hover-color)); /* Sombra de 10px en modo oscuro */
+        filter: drop-shadow(0 0 10px var(--hover-color)); 
     }
 
 </style>
